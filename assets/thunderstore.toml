@@ -1,0 +1,33 @@
+[config]
+schemaVersion = "0.0.1"
+
+[package]
+namespace = "www_Day_Dream"
+name = "Lockdown"
+description = "A Client-Side/Server-Side fix that prevents non-master clients from spawning monsters with more to come."
+websiteUrl = "https://github.com/wwwDayDream/Lockdown"
+containsNsfwContent = false
+
+[package.dependencies]
+BepInEx-BepInExPack = "5.4.2100"
+
+[build]
+icon = "icon.png"
+readme = "README.TS.md"
+outdir = "../dist"
+
+[[build.copy]]
+source = "../LICENSE"
+target = "/"
+
+[[build.copy]]
+source = "../Lockdown/bin/Release/netstandard2.1/Lockdown.dll"
+target = "/BepInEx/plugins/Lockdown/"
+
+[publish]
+communities = [ "content-warning" ]
+repository = "https://thunderstore.io"
+
+# "bepinex", "clientside" 
+[publish.categories]
+content-warning = [ "mods", "misc" ] 
